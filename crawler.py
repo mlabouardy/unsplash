@@ -24,8 +24,8 @@ for item in results['query']['results']['div']:
 
 s3 = boto3.resource(
     's3',
-    aws_access_key_id='',
-    aws_secret_access_key='',
+    aws_access_key_id='', # TO be replaced with your AWS ACCESS KEY ID
+    aws_secret_access_key='', # TO be replaced with your AWS SECRET KEY 
     config=Config(signature_version='s3v4')
 )
 s3.Bucket('unsplash-wallpapers').put_object(Key='wallpapers.json', Body=json.dumps(wallpapers))
